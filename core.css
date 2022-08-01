@@ -31,9 +31,11 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  top: 0;
   height: 6rem;
   background-color: var(--bg-color-500);
   z-index: 99;
+  transition: var(--transition);
 }
 
 .show {
@@ -439,7 +441,7 @@ waifu cards
   outline: none;
   cursor: pointer;
   background-color: var(--primary-500);
-  border-radius: 3px;
+  border-radius: 4px;
   box-shadow: var(--shadow);
   margin-top: .5rem;
   font-size: 1rem;
@@ -457,7 +459,7 @@ waifu cards
   background-color: var(--bg-color-500);
   z-index: -1;
   transition: var(--transition);
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .waifu-card button:hover::before {
@@ -474,4 +476,159 @@ waifu cards
     height: 25rem;
   }
   
+  .info-container {
+    width: 15rem;
+  }
+  
+}
+
+/*
+footer
+*/
+
+.footer {
+  background-color: var(--bg-color-500);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  width: 80%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 6rem
+}
+
+#footer-logo img {
+  width: 90px;
+}
+
+#name {
+  color: var(--primary-500);
+}
+
+.copyright {
+  color: #fff;
+  font-size: .8rem;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.social-icons a {
+  font-size: 1.3rem;
+  color: var(--btn-color-500);
+  padding: 0 .2rem;
+}
+
+@media screen and (max-width: 480px) {
+  
+  .footer-container {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  
+  .copyright {
+    margin-top: 1rem;
+  }
+  
+  #footer-logo {
+    margin-top: 1rem;
+  }
+  
+  .social-icons {
+    margin: 1rem 0;
+  }
+  
+}
+
+/*
+info
+*/
+
+.info {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.info-container {
+  min-height: 50%;
+  width: 20rem;
+  background-color: #f8f9f9;
+  background-color: #851e3e;
+  background-color: #2e003e ;
+  border-radius: 15px;
+  position: relative;
+  transition: all .3s ease;
+  transform: scale(0);
+  z-index: 10000;
+}
+.pop {
+  transform: scale(1);
+}
+
+.info-message {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 85%;
+}
+
+.info-container button {
+  border: none;
+  color: #851e3e;
+  background-color: transparent;
+  font-size: 1.7rem;
+  position: absolute;
+  right: 1rem;
+  top: .5rem;
+  outline: none;
+  cursor: pointer;
+  padding: 0 .1rem;
+}
+
+.info-message h2 {
+  text-align: center;
+  color: #f4e7e7;
+  margin-bottom: 1rem;
+}
+
+.info-message p {
+  color: #e4dcf1;
+}
+
+#mess {
+  margin-top: 1rem;
+}
+/*
+#indent {
+  margin-left: .5rem;
+}*/
+
+
+@media screen and (max-width: 400px) {
+  .info-container {
+    width: 15rem;
+  }
+  .info-message h2 {
+    margin-bottom: .5rem;
+  }
 }
