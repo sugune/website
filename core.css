@@ -1,0 +1,477 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-500: #641bff;
+  --bg-color-500: #1e1f26;
+  --transition: all 300ms ease-in;
+  --btn-color-500: #8874a3;
+  --max-width: 1200px;
+  --shadow: 0 6 30 0 rgba(0, 0, 0, 0.4);
+}
+
+h1, h2, h3, p {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 6rem;
+  background-color: var(--bg-color-500);
+  z-index: 99;
+}
+
+.show {
+  position: sticky;
+  top: 0;
+}
+
+.nav-container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: var(--max-width);
+}
+
+.logo img {
+  width: 120px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+  height: 6rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  transition: var(--transition);
+  height: 100%;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.nav-link:hover {
+  color: var(--primary-500);
+}
+
+.nav-btn {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: .15rem .75rem;
+  border-radius: 3px;
+  z-index: 1;
+  overflow: hidden;
+  background-color: var(--btn-color-500);
+  outline: none;
+  margin-left: 1rem;
+}
+
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  border-radius: 3px;
+  background-color: var(--primary-500);
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 110%;
+  transform: translateX(-100%);
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.nav-btn:hover::before,
+.nav-btn:focus::before {
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 960px) {
+  
+  .nav-container {
+    position: relative;
+  }
+  
+  .nav-menu {
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    background-color: var(--bg-color-500);
+    height: 50vh;
+    top: -1000px;
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+  }
+  
+  .nav-menu.active {
+    top: 100%;
+    opacity: 1;
+  }
+  
+  .nav-list {
+    width: 100%;
+    font-size: 1.3rem;
+  }
+  
+  .nav-btn {
+    width: 70%;
+    margin: 0;
+  }
+  
+  .toggle-btn .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #fff;
+    display: block;
+    border-radius: 3px;
+    transition: var(--transition);
+  }
+  
+  .toggle-btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .toggle-btn.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .toggle-btn.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .toggle-btn.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+}
+
+/* 
+hero
+*/
+
+.hero {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 6rem);
+  background-color: var(--bg-color-500);
+  width: 100vw;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 90vw;
+  min-height: calc(100vh - 6rem);
+  align-items: center;
+  background-color: var(--bg-color-500);
+  max-width: var(--max-width);
+}
+
+.hero-img img {
+  width: 80%;
+  height: 80%;
+}
+
+.hero-img {
+  text-align: center;
+}
+
+.hero-content h1 {
+  background-color: #fff;
+  font-size: 4rem;
+  background-image: linear-gradient(to top, var(--bg-color-500) 0%, #fff 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.hero-content h2 {
+  font-size: 3.5rem;
+  background-color: #fff;
+  background-image: linear-gradient(to top, var(--bg-color-500) 0%, #641bff 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 700;
+  
+  background-color: #fff;
+  background-image: linear-gradient(to top, var(--btn-color-500) 0%, #fff 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.hero-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: .35rem 1.25rem;
+  background-color: var(--btn-color-500);
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 100%;
+  background-color: #641bff;
+  border-radius: 3px;
+  z-index: -1;
+  transition: var(--transition);
+}
+
+.hero-btn:hover::before {
+  right: 0;
+}
+
+@media screen and (max-width: 770px) {
+  
+  .hero-container {
+    grid-template-columns: auto;
+    gap: 1rem 0;
+  }
+  
+  .hero-content {
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 2.5rem;
+  }
+  
+}
+
+@media screen and (max-width: 470px) {
+  
+  .hero-container {
+    gap: 3rem 0;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .nav-list {
+    font-size: 1rem;
+  }
+  
+}
+
+/*
+waifu cards
+*/
+
+.waifus {
+  min-height: calc(100vh - 6rem);
+  background-color: var(--bg-color-500);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.waifus h1 {
+  text-transform: capitalize;
+  font-size: 2.3rem;
+  background-image: linear-gradient(
+    to top,
+    var(--bg-color-500) 0%,
+    var(--primary-500) 50%,
+    #fff 100%
+  );
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.waifus-container {
+  width: 90vw;
+  max-width: var(--max-width);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.waifu-card {
+  display: flex;
+  align-items: flex-end;
+  margin: 1rem;
+  height: 30rem;
+  width: 20rem;
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
+  transition: all .3s ease-in;
+  transform: scale(1);
+}
+.sumireko {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, .6) 100%), url('./waifus/sumireko.jpg');
+}
+.nemi {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, .6) 100%), url('./waifus/nemi.jpg');
+}
+.gura {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, .6) 100%), url('./waifus/gura.jpg');
+}
+.suon {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, .6) 100%), url('./waifus/suon.jpg');
+}
+.sora {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, .6) 100%), url('./waifus/sora.jpg');
+}
+.kinna {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, .6) 100%), url('./waifus/kinna.jpg');
+}
+
+.waifu-card:hover {
+  transform: scale(1.070);
+}
+
+.waifu-card div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 35%;
+  width: 100%;
+}
+
+.waifu-card h2 {
+  margin-left: 2rem;
+  color: #fff;
+  font-size: 1.5rem;
+  background-image: linear-gradient(
+    to top,
+    var(--primary-500) 0%,
+    #fff 60%,
+    #fff 100%
+  );
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-transform: capitalize;
+}
+
+.waifu-card button {
+  margin-left: 2rem;
+  color: #fff;
+  padding: .20rem .95rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--primary-500);
+  border-radius: 3px;
+  box-shadow: var(--shadow);
+  margin-top: .5rem;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.waifu-card button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 100%;
+  background-color: var(--bg-color-500);
+  z-index: -1;
+  transition: var(--transition);
+  border-radius: 3px;
+}
+
+.waifu-card button:hover::before {
+  right: 0;
+}
+
+@media screen and (max-width: 480px) {
+  
+  .waifus h1 {
+    margin-top: 3rem;
+  }
+  
+  .waifu-card {
+    height: 25rem;
+  }
+  
+}
