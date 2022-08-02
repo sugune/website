@@ -656,23 +656,30 @@ birthday
   z-index: 10000;
 }
 
+
 .birthday-container {
   background-color: #fff;
   height: 50%;
   width: 80%;
   border-radius: 10px;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%), url('./image/bg-2.jpg');
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('./image/bg-8.jpg');
   background-size: cover;
   display: flex;
   justify-content: center;
   max-width: 1000px;
   position: relative;
+  transform: translateX(-115%);
+  transition: all .4s ease;
+}
+
+.appear {
+  transform: translateX(0);
 }
 
 .birthday-container button {
   position: absolute;
   border: none;
-  color: #851e3e;
+  color: #fe4a49;
   background-color: transparent;
   font-size: 1.7rem;
   right: 1rem;
@@ -714,9 +721,10 @@ birthday
   background-size: 40%;
   background-repeat: no-repeat;
 }
+
 .birthday-content h1 {
   color: #fff;
-  background-image: linear-gradient(to top, #fff 0%, green 100%);
+  background-image: linear-gradient(to bottom, #00b159 0%, #fff 100%);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -728,6 +736,10 @@ birthday
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.birthday-content p {
+  color: #fff;
 }
 
 @media screen and (max-width: 960px) {
@@ -755,6 +767,9 @@ birthday
   .birthday-content h1 {
     font-size: 1.5rem;
   }
+  .birthday-content p {
+    font-size: .7rem;
+  }
 }
 @media screen and (max-width: 550px) {
   .b-day-nemi {
@@ -763,6 +778,12 @@ birthday
   .b-day-nemi h2 {
     font-size: .9rem;
     margin-left: .5rem;
+  }
+  .birthday-content p {
+    font-size: .5rem;
+  }
+  .birthday-container button {
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 480px) {
@@ -774,6 +795,9 @@ birthday
     height: 25%;
   }
   .birthday-content h1 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+  .birthday-content p {
+    font-size: .5rem;
   }
 }

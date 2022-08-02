@@ -200,3 +200,54 @@ btns.forEach((btn) => {
     }, 1)
   });
 });
+
+// birthday
+const heroBtn = document.querySelector('.hero-btn');
+const birthday = document.querySelector('.birthday');
+
+heroBtn.addEventListener('click', () => {
+  const element = document.createElement('div');
+  element.classList.add('birthday');
+  element.innerHTML = `<div class="birthday-container">
+        <button class="birthday-close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="birthday-center">
+          <div class="birthday-content">
+            <h1>Happy Birthday!</h1>
+            <h1>Nemi</h1>
+            <p>-Cyrus</p>
+          </div>
+          <div class="birthday-img">
+            <div class="waifu-card nemi b-day-nemi">
+              <div>
+                <h2>nemi</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  body.appendChild(element);
+  const container = element.querySelector('.birthday-container');
+  // animate
+  setTimeout(() => {
+    container.classList.add('appear');
+  }, 1);
+  
+  // background container transition
+  let i = 1;
+  setInterval(() => {
+    container.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('./image/bg-${i}.jpg')`;
+    if (i < 8) {
+      i++;
+    } else if (i === 8) i = 1;
+  }, 3000);
+  
+  
+  // close animation and element deletion
+  const birthdayClose = element.querySelector('.birthday-close');
+  birthdayClose.addEventListener('click', () => {
+    container.classList.remove('appear');
+    setTimeout(() => {
+      container.parentElement.remove();
+    }, 400);
+  });
+});
