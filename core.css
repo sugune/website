@@ -33,9 +33,11 @@ body {
   position: relative;
   top: 0;
   height: 6rem;
-  background-color: var(--bg-color-500);
+  background-color: none;
   z-index: 99;
   transition: var(--transition);
+  background-color: var(--bg-color-500);
+  width: 100%;
 }
 
 .show {
@@ -137,7 +139,7 @@ body {
     flex-direction: column;
     position: absolute;
     width: 100%;
-    background-color: var(--bg-color-500);
+    background-color: #1e1f26;
     height: 50vh;
     top: -1000px;
     opacity: 0;
@@ -201,13 +203,18 @@ hero
   width: 100vw;
 }
 
+.bg {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 100%), url('./bg.jpg');
+  background-size: cover;
+  
+}
+
 .hero-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 90vw;
   min-height: calc(100vh - 6rem);
   align-items: center;
-  background-color: var(--bg-color-500);
   max-width: var(--max-width);
 }
 
@@ -473,7 +480,7 @@ waifu cards
   }
   
   .waifu-card {
-    height: 25rem;
+    height: 30rem;
   }
   
   .info-container {
@@ -630,5 +637,143 @@ info
   }
   .info-message h2 {
     margin-bottom: .5rem;
+  }
+}
+
+/*
+birthday
+*/
+
+.birthday {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+}
+
+.birthday-container {
+  background-color: #fff;
+  height: 50%;
+  width: 80%;
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%), url('./image/bg-2.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  max-width: 1000px;
+  position: relative;
+}
+
+.birthday-container button {
+  position: absolute;
+  border: none;
+  color: #851e3e;
+  background-color: transparent;
+  font-size: 1.7rem;
+  right: 1rem;
+  top: .5rem;
+  outline: none;
+  cursor: pointer;
+  padding: 0 .1rem;
+  border-radius: 50%;
+}
+
+.birthday-center {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  /*background-image: url('./birthday.svg');
+  background-position: center;
+  background-size: 30%;
+  background-repeat: no-repeat;*/
+}
+
+.b-day-nemi {
+  height: 80%;
+  width: 40%;
+}
+
+.b-day-nemi h2 {
+  margin-left: 1rem;
+  font-size: 1.3rem;
+}
+.birthday-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50%;
+  background-image: url('./birthday.svg');
+  background-position: bottom right;
+  background-size: 40%;
+  background-repeat: no-repeat;
+}
+.birthday-content h1 {
+  color: #fff;
+  background-image: linear-gradient(to top, #fff 0%, green 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.birthday-img {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 960px) {
+  .birthday-container {
+    height: 40%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .birthday-container {
+    height: 35%;
+  }
+  .b-day-nemi h2 {
+    font-size: 1rem;
+  }
+  .birthday-content h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .birthday-container {
+    height: 30%;
+  }
+  .birthday-content h1 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .b-day-nemi {
+    height: 70%;
+  }
+  .b-day-nemi h2 {
+    font-size: .9rem;
+    margin-left: .5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .b-day-nemi h2 {
+    font-size: .7rem;
+    margin-left: .5rem;
+  }
+  .birthday-container {
+    height: 25%;
+  }
+  .birthday-content h1 {
+    font-size: 1.1rem;
   }
 }

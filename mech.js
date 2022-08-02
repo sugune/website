@@ -47,6 +47,14 @@ links.forEach((link) => {
   });
 });
 
+//footer year
+
+const year = document.getElementById('year');
+const newYear = new Date().getFullYear();
+console.log(newYear)
+
+// info modal
+
 const waifus = [
   {
     waifu: 'Sumireko',
@@ -98,8 +106,24 @@ const body = document.querySelector('body');
 btns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     const data = e.currentTarget.previousElementSibling.innerHTML;
+    let waifu;
+    let birthday;
+    let cuteness;
+    let desc;
+    let message;
     
-    let i;
+    for (let i = 0; i < waifus.length; i++) {
+        console.log('pass')
+      if (data === waifus[i].waifu.toLowerCase()) {
+        waifu = waifus[i].waifu;
+        birthday = waifus[i].birthday;
+        cuteness = waifus[i].cuteness;
+        desc = waifus[i].desc;
+        message = waifus[i].message;
+      }
+    }
+    
+    /*
     if (data === 'sumireko') {
       i = 0;
     } else if (data === 'nemi') {
@@ -112,13 +136,8 @@ btns.forEach((btn) => {
       i = 4;
     } else if (data === 'kinna') {
       i = 5;
-    }
+    } */
     
-    const waifu = waifus[i].waifu;
-    const birthday = waifus[i].birthday;
-    const cuteness = waifus[i].cuteness;
-    const desc = waifus[i].desc;
-    const message = waifus[i].message;
     
     /*
     if (data === 'sumireko') {
@@ -151,10 +170,6 @@ btns.forEach((btn) => {
       cuteness = waifus[5].cuteness;
     }*/
     
-    console.log(waifu)
-    console.log(birthday)
-    console.log(cuteness)
-    
     // create element and append
     const element = document.createElement('div');
     element.classList.add('info');
@@ -171,7 +186,6 @@ btns.forEach((btn) => {
     
     const close = element.querySelector('button');
     const container = element.querySelector('.info-container');
-    console.log(container)
     close.addEventListener('click', () => {
       const eliminate = body.querySelector('.info');
       container.classList.remove('pop');
@@ -182,8 +196,7 @@ btns.forEach((btn) => {
     
     body.appendChild(element);
     setTimeout(() => {
-    container.classList.add('pop');
-      
+      container.classList.add('pop');
     }, 1)
   });
 });
