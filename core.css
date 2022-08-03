@@ -582,7 +582,7 @@ info
   background-color: #2e003e ;
   border-radius: 15px;
   position: relative;
-  transition: all .3s ease;
+  transition: all .3s ease-in-out;
   transform: scale(0);
   z-index: 10000;
 }
@@ -669,7 +669,7 @@ birthday
   max-width: 1000px;
   position: relative;
   transform: translateX(-115%);
-  transition: all .4s ease;
+  transition: all .4s ease-in-out;
 }
 
 .appear {
