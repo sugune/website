@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/60018bc0e9.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./core.css" title="" type="" />
   </head>
   <body>
@@ -32,7 +36,7 @@
             <a class="nav-link" href="#waifus">waifus</a>
           </li>
           <li class="nav-list">
-            <a class="nav-link" href="#">about</a>
+            <a class="nav-link" href="#about">about</a>
           </li>
           <li class="nav-list list-btn">
             <a class="nav-btn" href="#">contact</a>
@@ -100,6 +104,93 @@
       </div>
     </section>
     <!-- end of waifu section -->
+    <!-- about section -->
+    <section class="about" id="about">
+      <h1>About</h1>
+      <div class="about-container">
+        <div class="about-content">
+          <h2>About this website</h2>
+          <p>
+            this website was made using HTML, CSS and Javascript.<br>
+            though using those tools initially is already difficult by
+            itself, desinging a website is way harder than i have expected. I have to change the design according to the width of the 
+            device <br>
+            (see the images underneath this section). 
+          </p>
+          <p>
+            have you seen the 'birthday card' that i made? <br>
+            if not, press the 'celebrate' button that is in the home 
+            section. <br>
+            it changes its background every 3000ms. originally, i was 
+            planning on adding only 1 but i cant decide wich one to 
+            display because they all look cool so i just added them all.
+          </p>
+          <p>period</p>
+        </div>
+      </div>
+        <div class="about-slider swiper mySwiper">
+          <div class="about-slider-container swiper-wrapper">
+            <div class="about-card swiper-slide">
+              <img src="./about-assets/image-1000.jpg" alt="website">
+            </div>
+            <div class="about-card swiper-slide">
+              <img src="./about-assets/image-1000-b1.jpg" alt="website">
+            </div>
+            <div class="about-card swiper-slide">
+              <img src="./about-assets/image-1000-waifu.jpg" alt="website">
+            </div>
+            <div class="about-card swiper-slide">
+              <img src="./about-assets/image-1000-waifu2.jpg" alt="website">
+            </div>
+            <div class="about-card swiper-slide">
+              <img src="./about-assets/image-1000-about.jpg" alt="website">
+            </div>
+            <div class="about-card swiper-slide">
+              <img src="./about-assets/image-1000-about2.jpg" alt="website">
+            </div>
+          </div>
+          
+          <div class="swiper-pagination"></div>
+        </div>
+        
+        <div class="about-slider swiper mySwiper">
+          <div class="about-slider-container swiper-wrapper">
+            <div class="about-card swiper-slide">
+              <img class="img-2" src="./about-assets/image-500.jpg" alt="website">
+            </div>
+            <div class="about-card swiper-slide">
+              <img class="img-2" src="./about-assets/image-500-1.jpg" alt="website">
+            </div>
+            <div class="about-card swiper-slide">
+              <img class="img-2" src="./about-assets/image-500-waifu1.jpg" alt="website">
+            </div>
+            <div class="about-card swiper-slide">
+              <img class="img-2" src="./about-assets/image-500-waifu2.jpg" alt="website">
+            </div>
+            <div class="about-card swiper-slide">
+              <img class="img-2" src="./about-assets/image-500-waifu3.jpg" alt="website">
+            </div>
+            <div class="about-card swiper-slide">
+              <img class="img-2" src="./about-assets/image-500-waifu4.jpg" alt="website">
+            </div>
+            <div class="about-card swiper-slide">
+              <img class="img-2" src="./about-assets/image-500-waifu5.jpg" alt="website">
+            </div>
+            <div class="about-card swiper-slide">
+              <img class="img-2" src="./about-assets/image-500-waifu6.jpg" alt="website">
+            </div>
+            <div class="about-card swiper-slide">
+              <img class="img-2" src="./about-assets/image-500-about.jpg" alt="website">
+            </div>
+            <div class="about-card swiper-slide">
+              <img class="img-2" src="./about-assets/image-500-about2.jpg" alt="website">
+            </div>
+          </div>
+          
+          <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- end of about section -->
     <!-- footer section -->
     <footer class="footer">
       <div class="footer-container">
@@ -156,11 +247,11 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- end of birthday  -->
     
     
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./mech.js" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>
